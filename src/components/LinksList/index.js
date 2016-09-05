@@ -13,14 +13,14 @@ class LinksList extends Component {
       'reflux/refluxjs/reflux'
     ].join(keysSeparator);
 
-    const bundlers = [
+    const reactD3Components = [
       'uber/react-vis',
       'esbullington/react-d3',
       'react-d3-library/react-d3-library',
       'recharts/recharts'
     ].join(keysSeparator);
 
-    const reactD3Components = [
+    const bundlers = [
       'gulpjs/gulp',
       'gruntjs/grunt',
       'substack/node-browserify/browserify',
