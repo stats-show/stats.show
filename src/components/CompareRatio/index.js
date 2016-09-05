@@ -43,7 +43,7 @@ class CompareRatio extends Component {
       message: 'Loading...'
     });
 
-    fetch(`${apiUrl}/${user}/${repository}/${packageName}`).then((response) => {
+    fetch(`${apiUrl}/${user.trim()}/${repository.trim()}/${packageName.trim()}`).then((response) => {
       if (response.status === 200) {
         return response.json();
       } else {
