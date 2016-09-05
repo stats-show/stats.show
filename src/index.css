@@ -19,6 +19,7 @@ h1, h2 {
   flex: 1 100%;
   font-weight: 400;
   text-transform: uppercase;
+  margin: 25px 0;
 }
 
 h1 {
@@ -27,6 +28,7 @@ h1 {
 }
 
 h2 {
+  margin: 25px 0;
   font-size: 32px;
 }
 

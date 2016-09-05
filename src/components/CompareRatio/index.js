@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router'
 import { bindClass } from '../../utils';
 import { apiUrl } from '../../constants';
 import StatsItem from '../StatsItem';
+import LinksList from '../LinksList';
+import { keysSeparator } from '../../constants';
 
 import './index.css';
 
@@ -12,10 +15,77 @@ class CompareRatio extends Component {
       user: '',
       repository: '',
       packageName: '',
-      items: [],
+      keys: [],
+      data: {},
       message: 'Start comparison by adding repositories!',
     };
+    const { keys } = this.props.location.query;
+    this.initItems(keys);
     bindClass(this);
+  }
+
+  initItems(keysString) {
+    const { data } = this.state;
+    const { router } = this.props;
+    const keys = keysString ? keysString.split(keysSeparator): [];
+    const newKeys = [];
+
+    const promises = keys.map((key) => {
+      if(data[key]) {
+        newKeys.push(key);
+        return Promise.resolve(key);
+      } else {
+        return this.fetchStats(key).then((item => {
+          newKeys.push(key);
+        })).catch(()=>{ });
+      }
+    });
+
+    Promise.all(promises).then(() => {
+      if (newKeys.length > 0) {
+        this.setState({
+          message: ''
+        });
+      }
+
+      this.setState({
+        keys: newKeys
+      });
+
+      if (newKeys.length < keys.length) {
+        router.push({
+          pathname: '/compare',
+          query: { keys: newKeys.join(keysSeparator) }
+        });
+      }
+    });
+
+  }
+
+  fetchStats(key) {
+    this.setState({
+      message: 'Loading...'
+    });
+
+    return fetch(`${apiUrl}/${key}`).then((response) => {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        return response.text().then((errorMessage) => {
+          throw new Error(errorMessage);
+        });
+      }
+    }).then((item) => {
+      const newData = Object.assign({}, this.state.data);
+      newData[key] = item;
+
+      this.setState({
+        data: newData,
+        message: null
+      });
+
+      return item;
+    });
   }
 
   _handleUserChange(event) {
@@ -30,37 +100,30 @@ class CompareRatio extends Component {
 
   _handleSubmit(event) {
     event.preventDefault();
-    const { user, repository, packageName} = this.state;
+    const { user, repository, packageName, keys } = this.state;
+    const { router } = this.props;
+    const key = `${user.trim()}/${repository.trim()}/${packageName.trim()}`;
     
     if (!user || !repository) {
-       this.setState({
+      this.setState({
         message: `Please, enter username and repository name!`
       });
       return;
     }
 
-    this.setState({
-      message: 'Loading...'
-    });
+    if (keys.indexOf(key) !== -1) {
+      this.clearForm();
+      return;
+    }
 
-    fetch(`${apiUrl}/${user.trim()}/${repository.trim()}/${packageName.trim()}`).then((response) => {
-      if (response.status === 200) {
-        return response.json();
-      } else {
-        return response.text().then((errorMessage) => {
-          throw new Error(errorMessage);
-        });
-      }
-    }).then((item) => {
-      const newItems = this.state.items.slice();
-      newItems.push(item);
+    this.fetchStats(key).then((item) => {
+      this.clearForm();
+      const newKeys = keys.slice();
+      newKeys.push(key);
 
-      this.setState({
-        message: null,
-        items: newItems,
-        user: '',
-        repository: '',
-        packageName: '',
+      router.push({
+        pathname: '/compare',
+        query: { keys: newKeys.join(keysSeparator) }
       });
     }).catch((err) => {
       this.setState({
@@ -69,14 +132,28 @@ class CompareRatio extends Component {
     });
   }
 
+  clearForm() {
+    this.setState({
+      message: null,
+      user: '',
+      repository: '',
+      packageName: '',
+    });
+  }
+
+  componentWillReceiveProps(newProps) {
+    const { keys } = newProps.location.query;
+    this.initItems(keys);
+  }
+
   render() {
     const {
       user, repository, packageName,
-      items, message
+      keys, data, message
     } = this.state;
     return (
       <div className="CompareRatio" id="compare">
-        <h2 >Enter repository data to start comparison</h2>
+        <h2>Enter repository data to start comparison</h2>
         <form className="CompareRatio-form" onSubmit={this._handleSubmit}>
           <input
             className="CompareRatio-input"
@@ -106,15 +183,20 @@ class CompareRatio extends Component {
           : null }
         </div>
         <div className="CompareRatio-list">
-          { items.map(item =>
-            <div key={`${item.user}${item.repo}`} className="CompareRatio-list-item">
-              <StatsItem data={item}/>
+          { keys.map(item =>
+            <div key={`${data[item].user}${data[item].repo}`} className="CompareRatio-list-item">
+              <StatsItem data={data[item]}/>
             </div>
           )}
         </div>
+        <LinksList />
       </div>
     );
   }
 }
 
-export default CompareRatio;
+CompareRatio.defaultProps = {
+  keys: ''
+};
+
+export default withRouter(CompareRatio);

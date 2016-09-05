@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
-import Landing from '../Landing';
-import CompareRatio from '../CompareRatio';
-import RatioChart from '../RatioChart';
+import { Link, IndexLink } from 'react-router';
+import { IntlProvider } from 'react-intl';
 
 import "./index.css";
-
 
 class App extends Component {
   render() {
     return (
-      <div className="App-container">
-        <div className="App">
-          <Landing/>
-          <CompareRatio />
-          <RatioChart />
+      <IntlProvider locale="en">
+        <div className="App-container">
+         <div className="App-nav">
+            <IndexLink className="App-nav-link" activeClassName="App-nav-link__active" to="">Home</IndexLink>
+            <Link className="App-nav-link" activeClassName="App-nav-link__active" to="/compare">Compare</Link>
+            <Link className="App-nav-link" activeClassName="App-nav-link__active" to="/chart">Explore</Link>
+          </div>
+          <div className="App">
+            { this.props.children }
+          </div>
         </div>
-      </div>
+      </IntlProvider>
     );
   }
 }

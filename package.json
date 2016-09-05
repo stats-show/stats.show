@@ -13,6 +13,7 @@
     "react-addons-shallow-compare": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-intl": "^2.1.4",
+    "react-router": "^2.7.0",
     "react-tooltip": "^3.1.6",
     "react-vis": "^0.5.0"
   },

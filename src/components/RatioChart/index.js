@@ -122,9 +122,9 @@ class RatioChart extends Component {
     const mappedData = this._mapData(data, xField, yField);
     return (      
       <div className="RatioChart" id="chart">
-        <h1 className="RatioChart-title">
+        <h2 className="RatioChart-title">
           Javascript open-source projects ratio chart
-        </h1>
+        </h2>
         <div className="RatioChart-container">
           <XYPlot animation={true}
             width={1000} height={500} 

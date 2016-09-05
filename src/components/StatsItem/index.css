@@ -49,6 +49,10 @@
   overflow: hidden;
 }
 
+.name {
+  color: #fff;
+}
+
 .text {
   max-width: 120px;
 }

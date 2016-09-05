@@ -3,10 +3,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
-}
-
-.RatioChart-title {
-  margin: 40px 0;
+  min-height: 80vh;
 }
 
 .RatioChart {

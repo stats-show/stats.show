@@ -1,0 +1,13 @@
+.LinksList {
+  margin: 20px;
+  text-align: center;
+}
+
+.LinksList-title {
+  margin: 10px;
+  font-size: 18px;
+}
+
+.LinksList-list {
+  font-size: 12px;
+}

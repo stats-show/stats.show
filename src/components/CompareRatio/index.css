@@ -1,6 +1,6 @@
 .CompareRatio {
-  height: 100vh;
-  min-height: 500px;
+  margin-top: 5vh;
+  min-height: 80vh;
 }
 
 .CompareRatio-form {
@@ -45,7 +45,6 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 100px;
   width: 960px;
   max-width: 960px;
 }

@@ -34,9 +34,12 @@ const fieldNames = {
 // const apiUrl = 'http://localhost:3001/api/';
 const apiUrl = 'http://dz1.westus.cloudapp.azure.com/api';
 
+const keysSeparator = ",";
+
 export {
   names,
   colors,
   fieldNames,
-  apiUrl
+  apiUrl,
+  keysSeparator
 };
