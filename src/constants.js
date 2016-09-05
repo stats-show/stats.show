@@ -21,7 +21,7 @@ const colors = {
 };
 
 const fieldNames = {
-  downloads: 'npm downloads (in the last week)',
+  downloads: 'npm downloads (last week)',
   stars: 'GitHub stars',
   openedIssues: 'new issues',
   closedIssues: 'closed issues',
