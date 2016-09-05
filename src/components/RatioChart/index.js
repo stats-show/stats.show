@@ -4,7 +4,6 @@ import { XYPlot, XAxis, YAxis, HorizontalGridLines, MarkSeries, Hint } from 'rea
 import { bindClass } from '../../utils';
 import { names, colors, fieldNames, apiUrl } from '../../constants';
 import StatsItem from '../StatsItem';
-import GithubButton from '../GithubButton';
 
 
 import "react-vis/main.css";
@@ -203,7 +202,6 @@ class RatioChart extends Component {
               </div>
             )}
           </div>
-          <GithubButton />
         </div>
         <div className="RatioChart-add">
           Want to add the project to chart? <a target="_blank" href="https://github.com/StarRatio/star-ratio/edit/master/docs/data.json">Create a Pull Request</a>!

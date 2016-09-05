@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
+import "./index.css";
+
 class GithubButton extends Component {
   render() {
     return (
-      <div className="github-button-container">
+      <div className="github-button-container github-header-button">
         <a
           className="github-button"
           href="https://github.com/StarRatio/star-ratio"

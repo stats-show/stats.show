@@ -21,6 +21,7 @@
 
 .App-nav-link:hover {
   background-color: #00BCD4;
+  border-bottom: 1px solid #00BCD4;
   color: #fff;
 }
 
