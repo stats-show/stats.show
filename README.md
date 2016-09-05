@@ -1,6 +1,8 @@
 # star-ratio
 Stats that matter.
-Handy tool to compare javascript open source projects.
+Handy tool to compare javascript open source projects:
+
+[![thumbnail](./docs/thumbnail.png?raw=true)](http://starratio.js.org)
 
 ## This client is build with:
 - [create-react-app](https://github.com/facebookincubator/create-react-app)
