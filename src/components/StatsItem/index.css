@@ -1,0 +1,114 @@
+.StatsItem {
+  width: 200px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+  border-radius: 2px;
+  color: #000;
+}
+
+.StatsItem-header {
+  padding: 10px;
+  background: #00BCD4;
+  color: #000;
+  font-size: 18px;
+  text-align: center;
+}
+
+.StatsItem-content {
+  padding: 20px 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 14px;
+  line-height: 18px;
+}
+.StatsItem-summary {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px 10px 0;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.StatsItem-summary-icons {
+  text-align: center;
+}
+
+.StatsItem-footer {
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.name, .text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.text {
+  max-width: 120px;
+}
+
+.name-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.octicon {
+  width: 24px;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.octicon-star {
+  color: #bbb;
+}
+
+.octicon-star:before {
+  padding-left: 2px;
+}
+
+.octicon-cloud-download {
+  color: #4078c0;
+}
+
+.octicon-git-pull-request {
+  color: #6e5494;
+}
+
+.octicon-git-pull-request:before {
+  padding-left: 4px;
+}
+
+.octicon-git-branch {
+  color: #6cc644;
+}
+
+.octicon-git-branch:before {
+  padding-left: 5px;
+}
+
+.octicon-issue-opened {
+  color: #6cc644;
+}
+
+.octicon-issue-opened:before {
+  padding-left: 2px;
+}
+
+.octicon-issue-closed {
+  color: #bd2c00;
+}
+
+.octicon-arrow-right {
+  width: 10px;
+  color: #bbb;
+}
+
+.octicon-git-commit {
+  color: #bbb;
+}

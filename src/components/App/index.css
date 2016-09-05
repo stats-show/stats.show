@@ -1,0 +1,13 @@
+.App-container {
+  margin-bottom: 20px;
+}
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto 20px;
+  min-width: 650px;
+  max-width: 1200px;
+}

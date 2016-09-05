@@ -1,0 +1,57 @@
+.CompareRatio {
+  height: 100vh;
+  min-height: 500px;
+}
+
+.CompareRatio-form {
+  text-align: center;
+}
+
+.CompareRatio-input {
+  width: 200px;
+  box-sizing: border-box;
+  margin: 20px;
+  padding: 10px 20px;
+  border: 1px solid rgba(0,0,0, 0.12);
+  outline: none;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.CompareRatio-button {
+  padding: 10px 36px;
+  border: 1px solid #50e3c2;
+  outline: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 18px;  
+  background-color: #fff;
+  color:#50e3c2;
+}
+
+.CompareRatio-button:hover {
+  background-color: #50e3c2;
+  color: #fff;
+}
+
+.CompareRatio-message {
+  height: 25px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.CompareRatio-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 100px;
+  width: 960px;
+  max-width: 960px;
+}
+
+.CompareRatio-list-item {
+  width: 200px;
+  flex-basis: 200px;
+  margin: 20px;
+}

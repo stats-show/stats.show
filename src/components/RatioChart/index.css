@@ -1,0 +1,27 @@
+.RatioChart {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.RatioChart-title {
+  margin: 40px 0;
+}
+
+.RatioChart {
+  width: 800px;
+  flex-basis: 800px;
+  flex-grow: 1;
+}
+
+.RatioChart-settings {
+  width: 200px;
+  flex-basis: 200px;
+}
+
+.RatioChart-add {
+  margin-bottom: 20px;
+  font-size: 12px;
+  text-align: center;
+}

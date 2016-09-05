@@ -1,0 +1,61 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+button {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  text-align: center;
+  flex: 1 100%;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0px;
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  margin: 0px;
+  font-weight: normal;
+  font-size: 22px;
+}
+
+h4 {
+  margin: 10px;
+  font-size: 18px;
+}
+
+.github-button-container {
+  margin: 10px;
+  text-align: center;
+}
+
+footer {
+  font-size: 11px;
+  text-align: center;
+}
+
+.footer-copyright {
+  text-align: right;
+  padding: 10px 0px;
+}
+
+.footer-copyright-link, .footer-copyright-link:visited {
+  color: #000;
+}
