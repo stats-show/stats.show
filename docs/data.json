@@ -13,7 +13,7 @@
   {"type":"styles","user":"postcss","repo":"postcss"},
   
   {"type":"language","user":"Microsoft","repo":"TypeScript","package":"typescript"},
-  {"type":"language","user":"jashkenas","repo":"coffeescript","package":"coffee-script"}
+  {"type":"language","user":"jashkenas","repo":"coffeescript","package":"coffee-script"},
   
   {"type":"testing_framework","user":"mochajs","repo":"mocha"},
   {"type":"testing_framework","user":"substack","repo":"tape"},
