@@ -13,11 +13,11 @@ class LinksList extends Component {
       'reflux/refluxjs/reflux'
     ].join(keysSeparator);
 
-    const reactD3Components = [
-      'uber/react-vis',
-      'esbullington/react-d3',
-      'react-d3-library/react-d3-library',
-      'recharts/recharts'
+    const testingFrameworks = [
+      'facebook/jest',
+      'mochajs/mocha',
+      'jasmine/jasmine',
+      'substack/tape'
     ].join(keysSeparator);
 
     const bundlers = [
@@ -34,6 +34,13 @@ class LinksList extends Component {
       'fmoo/react-typeahead'
     ].join(keysSeparator);
 
+    const reactD3Components = [
+      'uber/react-vis',
+      'esbullington/react-d3',
+      'react-d3-library/react-d3-library',
+      'recharts/recharts'
+    ].join(keysSeparator);
+
     return (
       <div className="LinksList">
         <h3 className="LinksList-title">Popular comparisons:</h3>
@@ -47,6 +54,13 @@ class LinksList extends Component {
           </div>
           <div className="LinksList-list-item">
             <Link
+              to={{ pathname: '/compare', query: { keys: testingFrameworks } }}
+              className="LinksList-list-link">
+              Testing Frameworks
+            </Link>
+          </div>
+          <div className="LinksList-list-item">
+            <Link
               to={{ pathname: '/compare', query: { keys: bundlers } }}
               className="LinksList-list-link">
               Javascript Bundlers
@@ -54,16 +68,16 @@ class LinksList extends Component {
           </div>
           <div className="LinksList-list-item">
             <Link
-              to={{ pathname: '/compare', query: { keys: reactD3Components } }}
+              to={{ pathname: '/compare', query: { keys: reactAutosuggestComponents } }}
               className="LinksList-list-link">
-              React Components for D3
+              React Autosuggest Components
             </Link>
           </div>
           <div className="LinksList-list-item">
             <Link
-              to={{ pathname: '/compare', query: { keys: reactAutosuggestComponents } }}
+              to={{ pathname: '/compare', query: { keys: reactD3Components } }}
               className="LinksList-list-link">
-              React Autosuggest Components
+              React Components for D3
             </Link>
           </div>
         </div>
