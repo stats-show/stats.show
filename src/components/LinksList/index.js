@@ -27,6 +27,13 @@ class LinksList extends Component {
       'webpack/webpack'
     ].join(keysSeparator);
 
+    const reactAutosuggestComponents = [
+      'moroshko/react-autosuggest',
+      'reactjs/react-autocomplete',
+      'ezequiel/react-typeahead-component',
+      'fmoo/react-typeahead'
+    ].join(keysSeparator);
+
     return (
       <div className="LinksList">
         <h3 className="LinksList-title">Popular comparisons:</h3>
@@ -50,6 +57,13 @@ class LinksList extends Component {
               to={{ pathname: '/compare', query: { keys: reactD3Components } }}
               className="LinksList-list-link">
               React Components for D3
+            </Link>
+          </div>
+          <div className="LinksList-list-item">
+            <Link
+              to={{ pathname: '/compare', query: { keys: reactAutosuggestComponents } }}
+              className="LinksList-list-link">
+              React Autosuggest Components
             </Link>
           </div>
         </div>
