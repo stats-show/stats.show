@@ -6,6 +6,7 @@ const names = {
   language: 'Languages',
   testing_framework: 'Testing frameworks',
   data_visualization: 'Data visualization',
+  react_components: 'React components',
   other: 'Other',
 };
 
@@ -17,6 +18,7 @@ const colors = {
   language: '#66a61e',
   testing_framework: '#e6ab02',
   data_visualization: '#a6761d',
+  react_components: '#0c7eaf',
   other: '#666666'
 };
 
