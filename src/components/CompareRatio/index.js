@@ -28,20 +28,19 @@ class CompareRatio extends Component {
     const { data } = this.state;
     const { router } = this.props;
     const keys = keysString ? keysString.split(keysSeparator): [];
-    const newKeys = [];
 
     const promises = keys.map((key) => {
       if(data[key]) {
-        newKeys.push(key);
         return Promise.resolve(key);
       } else {
         return this.fetchStats(key).then((item => {
-          newKeys.push(key);
-        })).catch(()=>{ });
+          return key;
+        })).catch(()=>{ return null; });
       }
     });
 
-    Promise.all(promises).then(() => {
+    Promise.all(promises).then((result) => {
+      const newKeys = result.filter(key => key!==null);
       if (newKeys.length > 0) {
         this.setState({
           message: ''
