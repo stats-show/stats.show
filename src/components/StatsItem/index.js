@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FormattedNumber } from 'react-intl';
-import ReactTooltip from 'react-tooltip'
+import ReactTooltip from 'react-tooltip';
 import moment from 'moment';
 
 import './index.css';
@@ -90,7 +90,5 @@ class StatsItem extends Component {
     );
   }
 }
-
-
 
 export default StatsItem;

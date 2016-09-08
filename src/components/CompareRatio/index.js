@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router'
-import { bindClass } from '../../utils';
-import { apiUrl } from '../../constants';
+import { withRouter } from 'react-router';
 import StatsItem from '../StatsItem';
 import LinksList from '../LinksList';
-import { keysSeparator } from '../../constants';
+import Button from '../Button';
+import { apiUrl, keysSeparator } from '../../constants';
+import { bindClass, getRepositoryName } from '../../utils';
 
 import './index.css';
 
@@ -12,8 +12,7 @@ class CompareRatio extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: '',
-      repository: '',
+      githubUrl: '',
       packageName: '',
       keys: [],
       data: {},
@@ -58,7 +57,6 @@ class CompareRatio extends Component {
         });
       }
     });
-
   }
 
   fetchStats(key) {
@@ -87,25 +85,24 @@ class CompareRatio extends Component {
     });
   }
 
-  _handleUserChange(event) {
-    this.setState({ user: event.target.value });
+  _handleGithubUrlChange(event) {
+    this.setState({ githubUrl: event.target.value });
   }
-  _handleRepoChange(event) {
-    this.setState({ repository: event.target.value });
-  }
+
   _handlePackageChange(event) {
     this.setState({ packageName: event.target.value });
   }
 
   _handleSubmit(event) {
     event.preventDefault();
-    const { user, repository, packageName, keys } = this.state;
+    const { githubUrl, packageName, keys } = this.state;
     const { router } = this.props;
-    const key = `${user.trim()}/${repository.trim()}/${packageName.trim()}`;
+    const repository = getRepositoryName(githubUrl);
+    const key = packageName ? `${repository}/${packageName}` : repository;
     
-    if (!user || !repository) {
+    if (repository === null) {
       this.setState({
-        message: `Please, enter username and repository name!`
+        message: `Please, enter Github repository url!`
       });
       return;
     }
@@ -131,11 +128,20 @@ class CompareRatio extends Component {
     });
   }
 
+  _handleRemove(keyToRemove) {
+    const { router } = this.props;
+    const { keys } = this.state;
+    const newKeys = keys.filter((key)=> key!== keyToRemove);
+    router.push({
+      pathname: '/compare',
+      query: { keys: newKeys.join(keysSeparator) }
+    });
+  }
+
   clearForm() {
     this.setState({
       message: null,
-      user: '',
-      repository: '',
+      githubUrl: '',
       packageName: '',
     });
   }
@@ -147,7 +153,7 @@ class CompareRatio extends Component {
 
   render() {
     const {
-      user, repository, packageName,
+      githubUrl, packageName,
       keys, data, message
     } = this.state;
     return (
@@ -155,18 +161,11 @@ class CompareRatio extends Component {
         <h2>Enter repository data to start comparison</h2>
         <form className="CompareRatio-form" onSubmit={this._handleSubmit}>
           <input
-            className="CompareRatio-input"
+            className="CompareRatio-input-long"
             type="text"
-            value={user}
-            placeholder="Github user name"
-            onChange={this._handleUserChange}/>
-          /
-          <input
-            className="CompareRatio-input"
-            type="text"
-            value={repository}
-            placeholder="Github repository name"
-            onChange={this._handleRepoChange}/>
+            value={githubUrl}
+            placeholder="GitHub repository URL or name"
+            onChange={this._handleGithubUrlChange}/>
           /
           <input
             className="CompareRatio-input"
@@ -175,6 +174,9 @@ class CompareRatio extends Component {
             placeholder="npm package name"
             onChange={this._handlePackageChange}/>
           <button type="submit" className="CompareRatio-button">Add</button>
+          <div className="CompareRatio-hint">
+            Tip: Skip npm package if it is the same as repository name
+          </div>
         </form>
         <div className="CompareRatio-message">
           { message ?
@@ -184,6 +186,11 @@ class CompareRatio extends Component {
         <div className="CompareRatio-list">
           { keys.map(item =>
             <div key={`${data[item].user}${data[item].repo}`} className="CompareRatio-list-item">
+              <Button className="CompareRatio-list-item-remove"
+                handleClick={this._handleRemove}
+                payload={item}>
+              X
+              </Button>
               <StatsItem data={data[item]}/>
             </div>
           )}

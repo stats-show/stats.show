@@ -9,6 +9,7 @@
     "intl": "^1.2.4",
     "moment": "^2.14.1",
     "octicons": "^4.3.0",
+    "parse-github-url": "^0.3.2",
     "react": "^15.3.1",
     "react-addons-shallow-compare": "^15.3.1",
     "react-dom": "^15.3.1",
