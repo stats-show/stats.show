@@ -26,7 +26,7 @@ class StatsItem extends Component {
           <div>
             <div data-tip="npm downloads (last week)">
               <span className="octicon octicon-cloud-download"></span>
-              <FormattedNumber value={data.downloads}/>
+              { data.downloads ? <FormattedNumber value={data.downloads}/> : <span>-</span> } 
             </div>
             <div data-tip="github stars">
               <span className="octicon octicon-star"></span>
