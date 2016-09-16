@@ -125,30 +125,33 @@ class RatioChart extends Component {
           Javascript open-source projects ratio chart
         </h2>
         <div className="RatioChart-container">
-          <XYPlot animation={true}
-            width={1000} height={500} 
-            margin={{left: 70, right: 30, top: 30, bottom: 40}}>
-            <HorizontalGridLines />
-            <XAxis title={fieldNames[xField]} tickTotal={5} />
-            <YAxis title={fieldNames[yField]} tickTotal={8} />
-            {visibleDataTypes.map(key =>
-              <MarkSeries
-                key={key}
-                size={key === highlightedType ? 16 : 6}
-                color={colors[key]}
-                data={mappedData[key]}
-                xType="time"
-                onValueMouseOver={this._rememberValue}
-                onValueMouseOut={this._forgetValue}
-                onValueClick={this._navigateToGithubRepo}
-              />
-            )}
-            { value ?
-              <Hint value={value}>
-                <StatsItem data={value}/>
-              </Hint> : null
-            }
-          </XYPlot>
+          {data.length === 0 ?
+            <div className="RatioChart-loading">Loading...</div> :
+            <XYPlot animation={true}
+              width={1000} height={500} 
+              margin={{left: 70, right: 30, top: 30, bottom: 40}}>
+              <HorizontalGridLines />
+              <XAxis title={fieldNames[xField]} tickTotal={5} />
+              <YAxis title={fieldNames[yField]} tickTotal={8} />
+              {visibleDataTypes.map(key =>
+                <MarkSeries
+                  key={key}
+                  size={key === highlightedType ? 16 : 6}
+                  color={colors[key]}
+                  data={mappedData[key]}
+                  xType="time"
+                  onValueMouseOver={this._rememberValue}
+                  onValueMouseOut={this._forgetValue}
+                  onValueClick={this._navigateToGithubRepo}
+                />
+              )}
+              { value ?
+                <Hint value={value}>
+                  <StatsItem data={value}/>
+                </Hint> : null
+              }
+            </XYPlot>
+          }
         </div>
         <div className="RatioChart-settings">
           <div>

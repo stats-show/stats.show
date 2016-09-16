@@ -2,14 +2,20 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  flex-grow: 1;
   justify-content: space-around;
+  flex-basis: 800px;
+  width: 800px;
   min-height: 80vh;
 }
 
-.RatioChart {
-  width: 800px;
-  flex-basis: 800px;
-  flex-grow: 1;
+.RatioChart-loading {
+  width: 1000px;
+  height: 500px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 500px;
+  font-size: 16px;
 }
 
 .RatioChart-settings {
