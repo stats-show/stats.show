@@ -18,8 +18,6 @@ class CompareRatio extends Component {
       data: {},
       message: 'Start comparison by adding repositories!',
     };
-    const { keys } = this.props.location.query;
-    this.initItems(keys);
     bindClass(this);
   }
 
@@ -144,6 +142,11 @@ class CompareRatio extends Component {
       githubUrl: '',
       packageName: '',
     });
+  }
+
+  componentWillMount() {
+    const { keys } = this.props.location.query;
+    this.initItems(keys);
   }
 
   componentWillReceiveProps(newProps) {
