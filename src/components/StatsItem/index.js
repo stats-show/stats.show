@@ -16,11 +16,10 @@ class StatsItem extends Component {
     return (
       <div className="StatsItem">
         <div className="StatsItem-header">
-          <div className="name">
-            <a className="name-link" href={`https://github.com/${data.user}/${data.repo}`} target="_blank" rel="nofollow">
-              <span>{data.user}</span>/<span className="name">{data.repo}</span>
-            </a>
-          </div> 
+          <a className="name-link" href={`https://github.com/${data.user}/${data.repo}`} target="_blank" rel="nofollow">
+            <span className="name username">{data.user}</span>
+            <span className="name reponame">{data.repo}</span>
+          </a>
         </div>
         <div className="StatsItem-content">
           <div>

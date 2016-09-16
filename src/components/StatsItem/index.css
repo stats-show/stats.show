@@ -7,10 +7,10 @@
 }
 
 .StatsItem-header {
-  padding: 10px;
   background: #00BCD4;
   color: #000;
-  font-size: 18px;
+  font-size: 10px;
+  line-height: 12px;
   text-align: center;
 }
 
@@ -50,17 +50,28 @@
   overflow: hidden;
 }
 
-.name {
-  color: #fff;
-}
-
 .text {
   max-width: 120px;
 }
 
 .name-link {
+  display: block;
+  padding: 10px;
   color: #fff;
   text-decoration: none;
+}
+
+.name {
+  display: inline-block;
+  width: 100%;
+}
+
+.username {
+}
+
+.reponame {
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .octicon {
