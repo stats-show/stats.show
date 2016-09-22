@@ -1,11 +1,15 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300);
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-family: 'Roboto', Helvetica, sans-serif;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 100;
+}
+
+input {
+  font-weight: 100;
 }
 
 button {
@@ -17,7 +21,8 @@ button {
 h1, h2 {
   text-align: center;
   flex: 1 100%;
-  font-weight: 400;
+  font-weight: 100;
+  font-style: normal;
   text-transform: uppercase;
   margin: 25px 0;
 }
@@ -34,12 +39,14 @@ h2 {
 
 h3 {
   margin: 0px;
-  font-weight: normal;
+  font-weight: 300;
+  font-style: normal;
   font-size: 22px;
 }
 
 h4 {
   margin: 10px;
+  font-weight: 100;
   font-size: 18px;
 }
 
@@ -60,4 +67,60 @@ footer {
 
 .footer-copyright-link, .footer-copyright-link:visited {
   color: #000;
+}
+
+
+.octicon {
+  width: 24px;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.octicon-star {
+  color: #bbb;
+}
+
+.octicon-star:before {
+  padding-left: 2px;
+}
+
+.octicon-cloud-download {
+  color: #4078c0;
+}
+
+.octicon-git-pull-request {
+  color: #6e5494;
+}
+
+.octicon-git-pull-request:before {
+  padding-left: 4px;
+}
+
+.octicon-git-branch {
+  color: #6cc644;
+}
+
+.octicon-git-branch:before {
+  padding-left: 5px;
+}
+
+.octicon-issue-opened {
+  color: #6cc644;
+}
+
+.octicon-issue-opened:before {
+  padding-left: 2px;
+}
+
+.octicon-issue-closed {
+  color: #bd2c00;
+}
+
+.octicon-arrow-right {
+  width: 10px;
+  color: #bbb;
+}
+
+.octicon-git-commit {
+  color: #bbb;
 }

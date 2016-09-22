@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
 import { FormattedNumber } from 'react-intl';
 import ReactTooltip from 'react-tooltip';
-import moment from 'moment';
+import { fieldTooltips } from '../../constants';
+import { durationToString, dateDiffFromNowToString } from '../../utils';
 
 import './index.css';
-
-import 'octicons/build/font/octicons.css';
 
 class StatsItem extends Component {
   render() {
     const { data } = this.props;
-    const issueTtlText = moment.duration(data.issueTtl).humanize();
-    const pullRequestTtlText = moment.duration(data.pullRequestTtl).humanize();
-    const lastCommitText = moment(data.lastCommit).fromNow();
     return (
       <div className="StatsItem">
         <div className="StatsItem-header">
@@ -23,33 +19,43 @@ class StatsItem extends Component {
         </div>
         <div className="StatsItem-content">
           <div>
-            <div data-tip="npm downloads (last week)">
+            <div data-tip={fieldTooltips['downloads']}>
               <span className="octicon octicon-cloud-download"></span>
               { data.downloads ? <FormattedNumber value={data.downloads}/> : <span>-</span> } 
             </div>
-            <div data-tip="github stars">
+            <div data-tip={fieldTooltips['stars']}>
               <span className="octicon octicon-star"></span>
               <FormattedNumber value={data.stars} />
             </div>
           </div>
           <div>
-            <div data-tip="issues opened during last 2 weeks">
+            <div data-tip={fieldTooltips['openedIssues']}>
               <span className="octicon octicon-issue-opened"></span>
               <FormattedNumber value={data.openedIssues}/>
             </div>
-            <div data-tip="issues closed during last 2 weeks">
+            <div data-tip={fieldTooltips['closedIssues']}>
               <span className="octicon octicon-issue-closed"></span>
               <FormattedNumber value={data.closedIssues}/>
             </div>
           </div>
           <div> 
-            <div data-tip="pull requests opened during last 2 weeks">
+            <div data-tip={fieldTooltips['openedPullRequests']}>
               <span className="octicon octicon-git-branch"></span>
+              <FormattedNumber value={data.openedPullRequests}/>
+            </div>
+            <div data-tip={fieldTooltips['mergedPullRequests']}>
+              <span className="octicon octicon-git-pull-request"></span>
               <FormattedNumber value={data.mergedPullRequests}/>
             </div>
-            <div data-tip="pull requests closed during last 2 weeks">
-              <span className="octicon octicon-git-pull-request"></span>
-              <FormattedNumber value={data.openedPullRequests}/>
+          </div>
+          <div> 
+            <div data-tip={fieldTooltips['commitsCount']}>
+              <span className="octicon octicon-git-commit"></span>
+              <FormattedNumber value={data.commitsCount}/>
+            </div>
+            <div data-tip={fieldTooltips['contributors']}>
+              <span className="octicon octicon-organization"></span>
+              <FormattedNumber value={data.contributors}/>
             </div>
           </div>
         </div>
@@ -71,13 +77,13 @@ class StatsItem extends Component {
           </div>
           <div>
             <div className="text">
-              <span>about {issueTtlText}</span>
+              <span>{durationToString(data.issueTtl)}</span>
             </div>
             <div className="text">
-              <span>about {pullRequestTtlText}</span>
+              <span>{durationToString(data.pullRequestTtl)}</span>
             </div>
             <div className="text">
-              <span>was {lastCommitText}</span>
+              <span>{dateDiffFromNowToString(data.lastCommit)}</span>
             </div>
           </div>
         </div>
