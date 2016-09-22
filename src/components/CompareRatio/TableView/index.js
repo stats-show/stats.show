@@ -79,7 +79,11 @@ class TableView extends Component {
           </Thead>
           { dataItems.map((({key, item}) => 
             <Tr key={`${item.user}/${item.repo}`}>
-              <Td column="name" data={`${item.user}/${item.repo}`}/>
+              <Td column="name" vale={`${item.user}/${item.repo}`}>
+                <a className="name-link" href={`https://github.com/${item.user}/${item.repo}`} target="_blank" rel="nofollow">
+                  {`${item.user}/${item.repo}`}
+                </a>
+              </Td>
               <Td column="downloads" value={item.downloads || 0}>
                 { item.downloads ? <FormattedNumber value={item.downloads}/> : <span>-</span> } 
               </Td>

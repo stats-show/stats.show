@@ -66,3 +66,7 @@
 .reactable-tfoot td {
   height: 12px;
 }
+
+.name-link {
+  color: #000; 
+}
