@@ -31,11 +31,6 @@
   text-align: center;
 }
 
-.Landing-item:hover {
-  padding: 0px;
-  border: 5px solid #00BCD4;
-}
-
 .Landing-item-thumbnail-compare,
 .Landing-item-thumbnail-graph {
   display: inline-block;
@@ -51,6 +46,7 @@
 }
 
 .Landing-item-title {
+  font-weight: 300;
   font-size: 16px;
   text-transform: uppercase;
 }
