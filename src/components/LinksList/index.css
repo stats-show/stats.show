@@ -10,4 +10,11 @@
 
 .LinksList-list {
   font-size: 12px;
+  font-weight: 300;
+  line-height: 16px;
+}
+
+.LinksList-list-item {
+  display: inline-block;
+  margin: 5px;
 }
