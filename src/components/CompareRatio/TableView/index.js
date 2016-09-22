@@ -17,9 +17,23 @@ class TableView extends Component {
   render() {
     const { keys, data, handleRemove } = this.props;
     const dataItems = keys.map((item) => {return { key: item, item: data[item]};});
+    const sortableColumns = [
+      'name',
+      'downloads',
+      'stars',
+      'openedIssues',
+      'closedIssues',
+      'openedPullRequests',
+      'mergedPullRequests',
+      'commitsCount',
+      'contributors',
+      'issueTtl',
+      'pullRequestTtl',
+      'lastCommit'
+    ];
     return (
       <div className="TableView">
-        <Table className="TableView-table" sortable>
+        <Table className="TableView-table" sortable={sortableColumns}>
           <Thead>
             <Th column="name">
               <strong className="name-header">name</strong>

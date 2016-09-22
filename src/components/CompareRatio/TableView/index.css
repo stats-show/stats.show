@@ -26,13 +26,14 @@
   border-bottom: 1px solid #eaeaea;
   font-size: 13px;
 }
-.reactable-header-sortable {
+
+.reactable-column-header th {
   outline: none;
   padding-right: 10px;
 }
 
-.reactable-header-sort-asc,
-.reactable-header-sort-desc {
+.reactable-column-header .reactable-header-sort-asc,
+.reactable-column-header .reactable-header-sort-desc {
   padding-right: 0px;
 }
 
