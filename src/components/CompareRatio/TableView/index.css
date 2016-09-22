@@ -67,6 +67,7 @@
   height: 12px;
 }
 
-.name-link {
+.TableView-name-link {
   color: #000; 
+  text-decoration: none;
 }

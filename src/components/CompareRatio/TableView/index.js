@@ -80,7 +80,7 @@ class TableView extends Component {
           { dataItems.map((({key, item}) => 
             <Tr key={`${item.user}/${item.repo}`}>
               <Td column="name" vale={`${item.user}/${item.repo}`}>
-                <a className="name-link" href={`https://github.com/${item.user}/${item.repo}`} target="_blank" rel="nofollow">
+                <a className="TableView-name-link" href={`https://github.com/${item.user}/${item.repo}`} target="_blank" rel="nofollow">
                   {`${item.user}/${item.repo}`}
                 </a>
               </Td>
