@@ -1,0 +1,67 @@
+.TableView {
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+  border-radius: 2px;
+  color: #000;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.TableView-table {
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.TableView-item-remove {
+  width: 18px;
+  height: 18px;
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+  background: #E35071;
+  color: #fff;
+  font-weight: 100;
+}
+
+.reactable-column-header {
+  height: 56px;
+  border-bottom: 1px solid #eaeaea;
+  font-size: 13px;
+}
+.reactable-header-sortable {
+  outline: none;
+  padding-right: 10px;
+}
+
+.reactable-header-sort-asc,
+.reactable-header-sort-desc {
+  padding-right: 0px;
+}
+
+.reactable-header-sort-asc:after {
+  content: '\25BC';
+  font-size: 10px;
+  color: #bababa;
+}
+
+.reactable-header-sort-desc:after {
+  content: '\25B2';
+  font-size: 10px;
+  color: #bababa;
+}
+
+.reactable-data tr:hover {
+  background: #eaeaea;
+}
+
+.reactable-data td {
+  height: 48px;
+  padding: 0 24px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.reactable-data tr:last-child td {
+  border-bottom: none;
+}
+
+.reactable-tfoot td {
+  height: 12px;
+}

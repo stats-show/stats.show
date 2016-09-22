@@ -68,3 +68,59 @@ footer {
 .footer-copyright-link, .footer-copyright-link:visited {
   color: #000;
 }
+
+
+.octicon {
+  width: 24px;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.octicon-star {
+  color: #bbb;
+}
+
+.octicon-star:before {
+  padding-left: 2px;
+}
+
+.octicon-cloud-download {
+  color: #4078c0;
+}
+
+.octicon-git-pull-request {
+  color: #6e5494;
+}
+
+.octicon-git-pull-request:before {
+  padding-left: 4px;
+}
+
+.octicon-git-branch {
+  color: #6cc644;
+}
+
+.octicon-git-branch:before {
+  padding-left: 5px;
+}
+
+.octicon-issue-opened {
+  color: #6cc644;
+}
+
+.octicon-issue-opened:before {
+  padding-left: 2px;
+}
+
+.octicon-issue-closed {
+  color: #bd2c00;
+}
+
+.octicon-arrow-right {
+  width: 10px;
+  color: #bbb;
+}
+
+.octicon-git-commit {
+  color: #bbb;
+}

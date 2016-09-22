@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
-import StatsItem from '../StatsItem';
+import ViewSwitcher from './ViewSwitcher';
+import TileView from './TileView';
+import TableView from './TableView';
 import LinksList from '../LinksList';
-import Button from '../Button';
 import { apiUrl, keysSeparator } from '../../constants';
 import { bindClass, getRepositoryName } from '../../utils';
 
@@ -16,7 +17,7 @@ class CompareRatio extends Component {
       packageName: '',
       keys: [],
       data: {},
-      message: 'Start comparison by adding repositories!',
+      message: 'Start comparison by adding repositories!'
     };
     bindClass(this);
   }
@@ -25,6 +26,10 @@ class CompareRatio extends Component {
     const { data } = this.state;
     const { router } = this.props;
     const keys = keysString ? keysString.split(keysSeparator): [];
+
+    this.setState({
+      message: 'Loading...'
+    });
 
     const promises = keys.map((key) => {
       if(data[key]) {
@@ -38,12 +43,6 @@ class CompareRatio extends Component {
 
     Promise.all(promises).then((result) => {
       const newKeys = result.filter(key => key!==null);
-      if (newKeys.length > 0) {
-        this.setState({
-          message: ''
-        });
-      }
-
       this.setState({
         keys: newKeys
       });
@@ -54,14 +53,20 @@ class CompareRatio extends Component {
           query: { keys: newKeys.join(keysSeparator) }
         });
       }
+
+      if (newKeys.length > 0) {
+        this.setState({
+          message: ''
+        });
+      } else {
+        this.setState({
+          message: 'Start comparison by adding repositories!'
+        });
+      }
     });
   }
 
   fetchStats(key) {
-    this.setState({
-      message: 'Loading...'
-    });
-
     return fetch(`${apiUrl}/${key}`).then((response) => {
       if (response.status === 200) {
         return response.json();
@@ -75,8 +80,7 @@ class CompareRatio extends Component {
       newData[key] = item;
 
       this.setState({
-        data: newData,
-        message: null
+        data: newData
       });
 
       return item;
@@ -110,14 +114,19 @@ class CompareRatio extends Component {
       return;
     }
 
+    this.setState({
+      message: 'Loading...'
+    });
+
     this.fetchStats(key).then((item) => {
       this.clearForm();
       const newKeys = keys.slice();
       newKeys.push(key);
 
       router.push({
-        pathname: '/compare',
-        query: { keys: newKeys.join(keysSeparator) }
+        pathname: this.props.location.pathname,
+        query: { keys: newKeys.join(keysSeparator) },
+        message: null
       });
     }).catch((err) => {
       this.setState({
@@ -131,7 +140,7 @@ class CompareRatio extends Component {
     const { keys } = this.state;
     const newKeys = keys.filter((key)=> key!== keyToRemove);
     router.push({
-      pathname: '/compare',
+      pathname: this.props.location.pathname,
       query: { keys: newKeys.join(keysSeparator) }
     });
   }
@@ -159,6 +168,7 @@ class CompareRatio extends Component {
       githubUrl, packageName,
       keys, data, message
     } = this.state;
+    const { view } = this.props.params;
     return (
       <div className="CompareRatio" id="compare">
         <h2>Enter repository data to start comparison</h2>
@@ -182,22 +192,26 @@ class CompareRatio extends Component {
           </div>
         </form>
         <div className="CompareRatio-message">
-          { message ?
+          { message ? (
             <div className="">{message}</div>
-          : null }
+            ) : (
+              null
+            )
+          }
         </div>
-        <div className="CompareRatio-list">
-          { keys.map(item =>
-            <div key={`${data[item].user}${data[item].repo}`} className="CompareRatio-list-item">
-              <Button className="CompareRatio-list-item-remove"
-                handleClick={this._handleRemove}
-                payload={item}>
-              X
-              </Button>
-              <StatsItem data={data[item]}/>
-            </div>
-          )}
-        </div>
+        { keys.length > 0 ? (
+          <div>
+            <ViewSwitcher query={this.props.location.query}/>
+            { view === 'table' ? (
+                <TableView keys={keys} data={data} handleRemove={this._handleRemove} />
+              ) : (
+                <TileView keys={keys} data={data} handleRemove={this._handleRemove} />
+              )
+            }
+          </div>
+         ) : (
+          null
+        )}
         <LinksList />
       </div>
     );

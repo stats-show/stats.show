@@ -52,31 +52,3 @@
   font-size: 18px;
   text-align: center;
 }
-
-.CompareRatio-list {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  width: 960px;
-  max-width: 960px;
-}
-
-.CompareRatio-list-item {
-  position: relative;
-  width: 200px;
-  flex-basis: 200px;
-  margin: 20px;
-}
-
-.CompareRatio-list-item-remove {
-  position: absolute;
-  right: -12px;
-  top: -12px;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
-  background: #E35071;
-  color: #fff;
-}
