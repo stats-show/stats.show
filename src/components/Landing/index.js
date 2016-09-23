@@ -9,9 +9,9 @@ class Landing extends Component {
     return (
       <div className="Landing-container">
         <div className="Landing">
-          <div className="Landing-title">
-            <h1>Stats that matter</h1>
-            <h3>Handy tool to compare javascript open-source projects</h3>
+          <div className="Landing-title_container">
+            <h1 className="Landing-title">Compare Javascript Open-source Projects</h1>
+            <h2 className="Landing-title_subtitle">by npm downloads, GitHub stars and other stats</h2>
           </div>
           <div className="Landing-items-list">
             <div className="Landing-item">

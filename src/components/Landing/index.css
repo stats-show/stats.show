@@ -14,8 +14,19 @@
   justify-content: center;
 }
 
-.Landing-title {
+.Landing-title_container {
   margin-bottom: 60px;
+}
+
+.Landing-title {
+
+}
+
+.Landing-title_subtitle {
+  text-transform: none;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 22px;
 }
 
 .Landing-items-list {
