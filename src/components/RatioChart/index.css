@@ -10,13 +10,23 @@
   font-weight: 300;
 }
 
+.RatioChart-card {
+  margin: 10px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+  border-radius: 2px;
+  color: #000;
+  font-weight: 300;
+  font-size: 12px;
+}
+
 .RatioChart-loading {
-  width: 1000px;
+  width: 900px;
   height: 500px;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 500px;
-  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .RatioChart-settings {

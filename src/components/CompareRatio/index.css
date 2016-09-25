@@ -47,8 +47,12 @@
   color: #fff;
 }
 
-.CompareRatio-message {
-  height: 25px;
-  font-size: 18px;
+.CompareRatio-message-container {
+  min-height: 70px;
   text-align: center;
+}
+
+.CompareRatio-message {
+  font-size: 18px;
+  line-height: 70px;
 }

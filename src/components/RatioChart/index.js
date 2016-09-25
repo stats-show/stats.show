@@ -4,6 +4,7 @@ import { XYPlot, XAxis, YAxis, HorizontalGridLines, MarkSeries, Hint } from 'rea
 import { bindClass } from '../../utils';
 import { names, colors, fieldNames, apiUrl } from '../../constants';
 import StatsItem from '../StatsItem';
+import Loader from '../Loader';
 
 
 import "react-vis/main.css";
@@ -124,11 +125,14 @@ class RatioChart extends Component {
         <h2 className="RatioChart-title">
           Javascript open-source projects ratio chart
         </h2>
-        <div className="RatioChart-container">
-          {data.length === 0 ?
-            <div className="RatioChart-loading">Loading...</div> :
+        <div className="RatioChart-container RatioChart-card">
+          {data.length === 0 ? (
+            <div className="RatioChart-loading">
+              <Loader/>
+            </div>
+          ) : (
             <XYPlot animation={true}
-              width={1000} height={500} 
+              width={900} height={500} 
               margin={{left: 70, right: 30, top: 30, bottom: 40}}>
               <HorizontalGridLines />
               <XAxis title={fieldNames[xField]} tickTotal={5} />
@@ -151,9 +155,9 @@ class RatioChart extends Component {
                 </Hint> : null
               }
             </XYPlot>
-          }
+          )}
         </div>
-        <div className="RatioChart-settings">
+        <div className="RatioChart-settings RatioChart-card">
           <div>
             <h4>Chart axis:</h4>
             <div>

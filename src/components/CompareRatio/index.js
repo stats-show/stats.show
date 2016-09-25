@@ -4,6 +4,7 @@ import ViewSwitcher from './ViewSwitcher';
 import TileView from './TileView';
 import TableView from './TableView';
 import LinksList from '../LinksList';
+import Loader from '../Loader';
 import { apiUrl, keysSeparator } from '../../constants';
 import { bindClass, getRepositoryName } from '../../utils';
 
@@ -17,7 +18,8 @@ class CompareRatio extends Component {
       packageName: '',
       keys: [],
       data: {},
-      message: 'Start comparison by adding repositories!'
+      message: null,
+      isLoading: true,
     };
     bindClass(this);
   }
@@ -28,7 +30,7 @@ class CompareRatio extends Component {
     const keys = keysString ? keysString.split(keysSeparator): [];
 
     this.setState({
-      message: 'Loading...'
+      isLoading: true
     });
 
     const promises = keys.map((key) => {
@@ -44,23 +46,15 @@ class CompareRatio extends Component {
     Promise.all(promises).then((result) => {
       const newKeys = result.filter(key => key!==null);
       this.setState({
-        keys: newKeys
+        keys: newKeys,
+        message: null,
+        isLoading: false
       });
 
       if (newKeys.length < keys.length) {
         router.push({
           pathname: '/compare',
           query: { keys: newKeys.join(keysSeparator) }
-        });
-      }
-
-      if (newKeys.length > 0) {
-        this.setState({
-          message: ''
-        });
-      } else {
-        this.setState({
-          message: 'Start comparison by adding repositories!'
         });
       }
     });
@@ -115,7 +109,8 @@ class CompareRatio extends Component {
     }
 
     this.setState({
-      message: 'Loading...'
+      message: null,
+      isLoading: true
     });
 
     this.fetchStats(key).then((item) => {
@@ -125,12 +120,12 @@ class CompareRatio extends Component {
 
       router.push({
         pathname: this.props.location.pathname,
-        query: { keys: newKeys.join(keysSeparator) },
-        message: null
+        query: { keys: newKeys.join(keysSeparator) }
       });
     }).catch((err) => {
       this.setState({
-        message: err.message
+        message: err.message,
+        isLoading: false
       });
     });
   }
@@ -166,7 +161,7 @@ class CompareRatio extends Component {
   render() {
     const {
       githubUrl, packageName,
-      keys, data, message
+      keys, data, message , isLoading
     } = this.state;
     const { view } = this.props.params;
     return (
@@ -191,9 +186,10 @@ class CompareRatio extends Component {
             Tip: Skip npm package if it is the same as repository name
           </div>
         </form>
-        <div className="CompareRatio-message">
+        <div className="CompareRatio-message-container">
+          { isLoading && ( <Loader/> )}
           { message ? (
-            <div className="">{message}</div>
+            <div className="CompareRatio-message">{message}</div>
             ) : (
               null
             )
@@ -203,9 +199,15 @@ class CompareRatio extends Component {
           <div>
             <ViewSwitcher query={this.props.location.query}/>
             { view === 'table' ? (
-                <TableView keys={keys} data={data} handleRemove={this._handleRemove} />
+                <TableView keys={keys}
+                  data={data}
+                  handleRemove={this._handleRemove}
+                  isLoading={isLoading} />
               ) : (
-                <TileView keys={keys} data={data} handleRemove={this._handleRemove} />
+                <TileView keys={keys}
+                  data={data}
+                  handleRemove={this._handleRemove}
+                  isLoading={isLoading} />
               )
             }
           </div>
