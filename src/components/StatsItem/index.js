@@ -61,17 +61,17 @@ class StatsItem extends Component {
         </div>
         <div className="StatsItem-summary">
           <div className="StatsItem-summary-icons">
-            <div data-tip="average time to close issue">
+            <div data-tip={fieldTooltips['issueTtl']}>
               <span className="octicon octicon-issue-opened"></span>
               <span className="octicon octicon-arrow-right"></span>
               <span className="octicon octicon-issue-closed"></span>
             </div>
-            <div data-tip="average time to close pull request">
+            <div data-tip={fieldTooltips['pullRequestTtl']}>
               <span className="octicon octicon-git-branch"></span>
               <span className="octicon octicon-arrow-right"></span>
               <span className="octicon octicon-git-pull-request"></span>
             </div>
-            <div data-tip="last commit">
+            <div data-tip={fieldTooltips['lastCommit']}>
               Last <span className="octicon octicon-git-commit"></span>
             </div>
           </div>

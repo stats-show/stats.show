@@ -44,6 +44,7 @@ const fieldTooltips = {
   pullRequestTtl: 'average time to close pull request',
   commitsCount: 'commits during last 2 weeks',
   contributors: 'contributors during last 2 weeks',
+  lastCommit: 'last commit'
 };
 
 // const apiUrl = 'http://localhost:3001/api/';

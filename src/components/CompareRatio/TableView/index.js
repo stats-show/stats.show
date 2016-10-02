@@ -63,17 +63,23 @@ class TableView extends Component {
               <span className="octicon octicon-organization" data-tip={fieldTooltips['contributors']}></span>
             </Th>
             <Th column="issueTtl">
-              <span className="octicon octicon-issue-opened"></span>
-              <span className="octicon octicon-arrow-right"></span>
-              <span className="octicon octicon-issue-closed"></span>
+              <span data-tip={fieldTooltips['issueTtl']}>
+                <span className="octicon octicon-issue-opened"></span>
+                <span className="octicon octicon-arrow-right"></span>
+                <span className="octicon octicon-issue-closed"></span>
+              </span>
             </Th>
             <Th column="pullRequestTtl">
-              <span className="octicon octicon-git-branch"></span>
-              <span className="octicon octicon-arrow-right"></span>
-              <span className="octicon octicon-git-pull-request"></span>
+              <span data-tip={fieldTooltips['issueTtl']}>
+                <span className="octicon octicon-git-branch"></span>
+                <span className="octicon octicon-arrow-right"></span>
+                <span className="octicon octicon-git-pull-request"></span>
+              </span>
             </Th>
             <Th column="lastCommit">
-              Last <span className="octicon octicon-git-commit"></span>
+              <span data-tip={fieldTooltips['lastCommit']}>
+                Last <span className="octicon octicon-git-commit"></span>
+              </span>
             </Th>
             <Th column="actions"><span></span></Th>
           </Thead>
