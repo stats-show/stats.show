@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && rm -rf ./docs/static && cp -a ./build/. ./docs",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
