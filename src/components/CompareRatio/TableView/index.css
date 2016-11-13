@@ -71,3 +71,12 @@
   color: #000; 
   text-decoration: none;
 }
+
+@media (max-width: 1200px) {
+  .TableView {
+    width: 95vw;
+    min-width: 730px;
+    margin: 0 auto;
+    overflow: auto;
+  }
+}

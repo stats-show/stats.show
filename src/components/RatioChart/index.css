@@ -39,7 +39,18 @@
 }
 
 .RatioChart-add {
+  flex-basis: 100%;
   margin-bottom: 20px;
   font-size: 12px;
   text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .RatioChart-container {
+    width: 95vw;
+    min-width: 730px;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: auto;
+  }
 }

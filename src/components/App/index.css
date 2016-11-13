@@ -1,5 +1,6 @@
 .App-container {
   margin-bottom: 20px;
+  min-width: 768px;
 }
 
 .App-nav {
@@ -36,6 +37,6 @@
   flex-direction: row;
   justify-content: space-around;
   margin: 0 auto 20px;
-  min-width: 650px;
+  min-width: 768px;
   max-width: 1200px;
 }

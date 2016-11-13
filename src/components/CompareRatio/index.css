@@ -56,3 +56,9 @@
   font-size: 18px;
   line-height: 70px;
 }
+
+@media (max-width: 860px) {
+  .CompareRatio-input-long {
+    width: 300px;
+  }
+}
