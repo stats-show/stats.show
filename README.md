@@ -4,6 +4,9 @@ Handy tool to compare javascript open source projects:
 
 [![thumbnail](./docs/thumbnail.png?raw=true)](http://starratio.js.org)
 
+## Testimonials
+> ["Very interesting and clever tool to compare JavaScript frameworks"](https://twitter.com/shanselman/status/775956034229678080) - Scott Hanselman
+
 ## This client is build with:
 - [create-react-app](https://github.com/facebookincubator/create-react-app)
 - [react-vis](https://github.com/uber/react-vis)
