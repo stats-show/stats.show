@@ -10,18 +10,6 @@ const names = {
   other: 'Other',
 };
 
-const colors = {
-  frontend_framework: '#1b9e77',
-  backend_framework: '#d95f02',
-  bundler: '#7570b3',
-  styles: '#e7298a',
-  language: '#66a61e',
-  testing_framework: '#e6ab02',
-  data_visualization: '#a6761d',
-  react_components: '#0c7eaf',
-  other: '#666666'
-};
-
 const fieldNames = {
   downloads: 'npm downloads (last week)',
   stars: 'GitHub stars',
@@ -47,6 +35,28 @@ const fieldTooltips = {
   lastCommit: 'last commit'
 };
 
+const colorNames = [
+    'red',
+    'pink',
+    'purple',
+    'deepPurple',
+    'indigo',
+    'blue',
+    'lightBlue',
+    'cyan',
+    'teal',
+    'green',
+    'lightGreen',
+    'lime',
+    'yellow',
+    'amber',
+    'orange',
+    'deepOrange',
+    'brown',
+    'grey',
+    'blueGrey'
+  ];
+
 // const apiUrl = 'http://localhost:3001/api/';
 const apiUrl = 'http://u01.westeurope.cloudapp.azure.com/api';
 
@@ -54,7 +64,7 @@ const keysSeparator = ",";
 
 export {
   names,
-  colors,
+  colorNames,
   fieldNames,
   fieldTooltips,
   apiUrl,

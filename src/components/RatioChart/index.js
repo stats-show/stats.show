@@ -1,8 +1,8 @@
 import moment from 'moment';
 import React, { Component } from 'react';
 import { XYPlot, XAxis, YAxis, HorizontalGridLines, MarkSeries, Hint } from 'react-vis';
-import { bindClass } from '../../utils';
-import { names, colors, fieldNames, apiUrl } from '../../constants';
+import { bindClass, getColorByIndex } from '../../utils';
+import { names, fieldNames, apiUrl } from '../../constants';
 import StatsItem from '../StatsItem';
 import Loader from '../Loader';
 
@@ -120,6 +120,7 @@ class RatioChart extends Component {
   render() {
     const { data, xField, yField, value, visibleDataTypes, highlightedType } = this.state;
     const mappedData = this._mapData(data, xField, yField);
+    const mappedDataKeys = Object.keys(mappedData);
     return (      
       <div className="RatioChart" id="chart">
         <h2 className="RatioChart-title">
@@ -141,7 +142,7 @@ class RatioChart extends Component {
                 <MarkSeries
                   key={key}
                   size={key === highlightedType ? 16 : 6}
-                  color={colors[key]}
+                  color={getColorByIndex(mappedDataKeys.indexOf(key))}
                   data={mappedData[key]}
                   xType="time"
                   onValueMouseOver={this._rememberValue}
@@ -189,7 +190,7 @@ class RatioChart extends Component {
           </div>
           <h4>Categories:</h4>
           <div className="RatioChart-settings__items">
-            {Object.keys(mappedData).map(key =>
+            {Object.keys(mappedData).map((key, index) =>
               <div key={'checkbox-' + key}>
                 <input type="checkbox"
                   checked={visibleDataTypes.indexOf(key)!==-1}
@@ -204,7 +205,7 @@ class RatioChart extends Component {
                   onMouseEnter={this._highlightType}
                   onMouseLeave={this._unhighlightType}
                   data-type={key}
-                  style={{color:colors[key]}}
+                  style={{color: getColorByIndex(index)}}
                 >{names[key]} ({mappedData[key].length})</label>
               </div>
             )}

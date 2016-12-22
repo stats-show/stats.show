@@ -1,5 +1,9 @@
 import githubUrl from 'parse-github-url';
 import moment from 'moment';
+import * as colors from 'material-colors';
+import { colorNames } from './constants';
+
+const colorsCount = colorNames.length;
 
 function getRepositoryName(url) {
   const data = githubUrl(url);
@@ -20,9 +24,18 @@ function bindClass(classToBind) {
     .forEach((method) => (classToBind[method] = classToBind[method].bind(classToBind)));
 }
 
+function getColorByIndex(index) {
+  const initialValue = index * 3;
+  const colorPage = initialValue > 0 ? Math.floor(initialValue/ colorsCount) : 0;
+  const colorIndex = initialValue - colorPage * colorsCount;
+  const colorName = colorNames[colorIndex];
+  return colors[colorName][700 - colorPage * 200];
+}
+
 export {
   getRepositoryName,
   bindClass,
   durationToString,
-  dateDiffFromNowToString
+  dateDiffFromNowToString,
+  getColorByIndex
 }
