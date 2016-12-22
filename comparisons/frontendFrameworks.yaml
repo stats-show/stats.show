@@ -1,0 +1,6 @@
+title: Frontend Frameworks
+repos:
+  - github: reactjs/redux
+  - github: facebook/react
+  - github: angular/angular
+    npm: angular2

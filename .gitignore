@@ -11,3 +11,5 @@ build
 npm-debug.log
 
 *.map
+
+comparisons/comparisons.json

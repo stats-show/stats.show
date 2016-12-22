@@ -1,0 +1,6 @@
+title: React Autosuggest Components
+repos:
+  - github: moroshko/react-autosuggest
+  - github: reactjs/react-autocomplete
+  - github: ezequiel/react-typeahead-component
+  - github: fmoo/react-typeahead
