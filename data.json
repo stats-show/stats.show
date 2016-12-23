@@ -1,0 +1,29 @@
+[
+  {"type":"frontend_framework","user":"reactjs","repo":"redux"},
+  {"type":"frontend_framework","user":"facebook","repo":"react"},
+  {"type":"frontend_framework","user":"angular","repo":"angular","package":"angular2"},
+
+  {"type":"bundler","user":"gulpjs","repo":"gulp"},
+  {"type":"bundler","user":"gruntjs","repo":"grunt"},
+  {"type":"bundler","user":"substack","repo":"node-browserify","package":"browserify"},
+  {"type":"bundler","user":"webpack","repo":"webpack"},
+
+  {"type":"styles","user":"less","repo":"less.js","package":"less"},
+  {"type":"styles","user":"sass","repo":"node-sass"},
+  {"type":"styles","user":"postcss","repo":"postcss"},
+
+  {"type":"language","user":"Microsoft","repo":"TypeScript","package":"typescript"},
+  {"type":"language","user":"jashkenas","repo":"coffeescript","package":"coffee-script"},
+
+  {"type":"testing_framework","user":"mochajs","repo":"mocha"},
+  {"type":"testing_framework","user":"substack","repo":"tape"},
+  {"type":"testing_framework","user":"jasmine","repo":"jasmine"},
+  {"type":"testing_framework","user":"facebook","repo":"jest","package":"jest-cli"},
+
+  {"type":"react_components","user":"moroshko","repo":"react-autosuggest"},
+  {"type":"react_components","user":"JedWatson","repo":"react-select"},
+  {"type":"react_components","user":"reactjs","repo":"react-autocomplete"},
+  {"type":"react_components","user":"ezequiel","repo":"react-typeahead-component"},
+  {"type":"react_components","user":"fmoo","repo":"react-typeahead"},
+  {"type":"react_components","user":"reactjs","repo":"react-modal"}
+]
