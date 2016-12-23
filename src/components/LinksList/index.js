@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { keysSeparator } from '../../constants';
-import links from '../../../comparisons/comparisons.json';
+import { keysSeparator, links } from '../../constants';
 
 import "./index.css";
 

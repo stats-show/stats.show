@@ -5,8 +5,13 @@ const yaml = require('js-yaml');
 const results = [];
 
 try {
-  console.log('Parsing yaml files:');
+  console.log('Removing json file:');
   const dirPath = path.resolve('.', 'comparisons');
+  const resultFilePath = path.resolve(dirPath, 'comparisons.json');
+  if (fs.existsSync(resultFilePath)) {
+      fs.unlinkSync(resultFilePath);
+  }
+  console.log('Parsing yaml files:');
   const fileNames = fs.readdirSync(dirPath);
   fileNames.forEach((fileName) => {
     console.log(`  - ${fileName}`);
@@ -16,8 +21,7 @@ try {
     results.push(document);
   });
   console.log('Saving to json file');
-  const resultFilePath = path.resolve(dirPath, 'comparisons.json');
-  fs.unlinkSync(resultFilePath);
+  
   fs.writeFileSync(resultFilePath, JSON.stringify(results));
   console.log('Finished successfully!');
 } catch (e) {

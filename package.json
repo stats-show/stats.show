@@ -22,7 +22,7 @@
     "reactable": "^0.14.1"
   },
   "scripts": {
-    "start": "build:comparisons && react-scripts start",
+    "start": "npm run build:comparisons && react-scripts start",
     "build": "react-scripts build && rm -rf ./docs/static && cp -a ./build/. ./docs",
     "eject": "react-scripts eject",
     "build:comparisons": "node tools/buildComparisons.js"

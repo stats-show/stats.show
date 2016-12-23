@@ -1,3 +1,5 @@
+import links from '../comparisons/comparisons.json';
+
 const names = {
   frontend_framework: 'Frontend frameworks',
   backend_framework: 'Backend frameworks',
@@ -61,12 +63,12 @@ const colorNames = [
 const apiUrl = 'http://u01.westeurope.cloudapp.azure.com/api';
 
 const keysSeparator = ",";
-
 export {
   names,
   colorNames,
   fieldNames,
   fieldTooltips,
   apiUrl,
-  keysSeparator
+  keysSeparator,
+  links
 };
