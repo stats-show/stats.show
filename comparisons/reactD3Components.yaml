@@ -1,0 +1,6 @@
+title: React Components for D3
+repos:
+  - github: uber/react-vis
+  - github: esbullington/react-d3
+  - github: react-d3-library/react-d3-library
+  - github: recharts/recharts

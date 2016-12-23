@@ -2,27 +2,30 @@
   "name": "star-ratio",
   "version": "0.0.1",
   "devDependencies": {
-    "react-scripts": "0.2.3"
+    "js-yaml": "^3.7.0",
+    "react-scripts": "^0.8.4"
   },
   "dependencies": {
     "fetch": "^1.1.0",
     "intl": "^1.2.4",
-    "moment": "^2.14.1",
+    "material-colors": "^1.2.0",
+    "moment": "^2.17.1",
     "octicons": "^4.3.0",
     "parse-github-url": "^0.3.2",
-    "react": "^15.3.1",
-    "react-addons-shallow-compare": "^15.3.1",
-    "react-dom": "^15.3.1",
+    "react": "^15.4.1",
+    "react-addons-shallow-compare": "^15.4.1",
+    "react-dom": "^15.4.1",
     "react-intl": "^2.1.4",
-    "react-router": "^2.7.0",
-    "react-tooltip": "^3.1.6",
-    "react-vis": "^0.5.0",
-    "reactable": "^0.14.0"
+    "react-router": "^3.0.0",
+    "react-tooltip": "^3.2.2",
+    "react-vis": "^0.7.1",
+    "reactable": "^0.14.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm run build:comparisons && react-scripts start",
     "build": "react-scripts build && rm -rf ./docs/static && cp -a ./build/. ./docs",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:comparisons": "node tools/buildComparisons.js"
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
