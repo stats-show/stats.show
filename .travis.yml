@@ -16,5 +16,4 @@ deploy:
     branch: master
     condition: $TRAVIS_PULL_REQUEST=false
 before_install:
-  - openssl aes-256-cbc -K $encrypted_abb82e9f191e_key -iv $encrypted_abb82e9f191e_iv
-    -in id_rsa.enc -out id_rsa -d
+  - openssl aes-256-cbc -K $encrypted_abb82e9f191e_key -iv $encrypted_abb82e9f191e_iv -in id_rsa.enc -out id_rsa -d
