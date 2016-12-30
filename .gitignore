@@ -13,3 +13,5 @@ npm-debug.log
 *.map
 
 comparisons/comparisons.json
+
+id_rsa
