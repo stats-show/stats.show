@@ -26,7 +26,7 @@
     "start": "npm run build:comparisons && react-scripts start",
     "build": "react-scripts build",
     "build:comparisons": "node tools/buildComparisons.js",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build -r git@github.com:StarRatio/star-ratio.git"
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
