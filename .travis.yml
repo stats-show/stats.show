@@ -7,7 +7,7 @@ script:
   - npm run build
 branches:
   only:
-    - master
+   - master
 deploy:
   provider: script
   script: deploy.sh
