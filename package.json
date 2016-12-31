@@ -2,6 +2,7 @@
   "name": "star-ratio",
   "version": "0.0.1",
   "devDependencies": {
+    "gh-pages": "^0.12.0",
     "js-yaml": "^3.7.0",
     "react-scripts": "^0.8.4"
   },
@@ -23,9 +24,9 @@
   },
   "scripts": {
     "start": "npm run build:comparisons && react-scripts start",
-    "build": "react-scripts build && rm -rf ./docs/static && cp -a ./build/. ./docs",
-    "eject": "react-scripts eject",
-    "build:comparisons": "node tools/buildComparisons.js"
+    "build": "react-scripts build",
+    "build:comparisons": "node tools/buildComparisons.js",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
