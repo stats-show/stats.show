@@ -5,7 +5,7 @@ const yaml = require('js-yaml');
 const results = [];
 
 try {
-  console.log('Removing json file:');
+  console.log('Removing comparisons.json file.');
   const dirPath = path.resolve('.', 'comparisons');
   const resultFilePath = path.resolve(dirPath, 'comparisons.json');
   if (fs.existsSync(resultFilePath)) {
@@ -20,7 +20,7 @@ try {
     const document = yaml.safeLoad(file);
     results.push(document);
   });
-  console.log('Saving to json file');
+  console.log('Saving to comparisons.json file.');
   
   fs.writeFileSync(resultFilePath, JSON.stringify(results));
   console.log('Finished successfully!');
