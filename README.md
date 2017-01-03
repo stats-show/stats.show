@@ -2,7 +2,7 @@
 Stats that matter.
 Handy tool to compare javascript open source projects:
 
-[![thumbnail](./docs/thumbnail.png?raw=true)](http://starratio.js.org)
+[![thumbnail](http://starratio.js.org/thumbnail.png)](http://starratio.js.org)
 
 ## Testimonials
 > ["Very interesting and clever tool to compare JavaScript frameworks"](https://twitter.com/shanselman/status/775956034229678080) - Scott Hanselman
