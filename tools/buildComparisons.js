@@ -2,28 +2,33 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 
-const results = [];
+const comparisonsFolderPath = process.argv[2];
+buildComparisons(comparisonsFolderPath, 'comparisons.json');
 
-try {
-  console.log('Removing comparisons.json file.');
-  const dirPath = path.resolve('.', 'comparisons');
-  const resultFilePath = path.resolve(dirPath, 'comparisons.json');
-  if (fs.existsSync(resultFilePath)) {
-      fs.unlinkSync(resultFilePath);
+function buildComparisons(comparisonsFolderPath, resultFileName) {
+  const results = [];
+  try {
+    console.log(`Removing ${resultFileName} file.`);
+    const dirPath = path.resolve(comparisonsFolderPath);
+    const resultFilePath = path.resolve(dirPath, resultFileName);
+    if (fs.existsSync(resultFilePath)) {
+        fs.unlinkSync(resultFilePath);
+    }
+    
+    console.log('Parsing yaml files:');
+    const fileNames = fs.readdirSync(dirPath);
+    fileNames.forEach((fileName) => {
+      console.log(`  - ${fileName}`);
+      const filePath = path.resolve(dirPath, fileName);
+      const file = fs.readFileSync(filePath, 'utf8');
+      const document = yaml.safeLoad(file);
+      results.push(document);
+    });
+    console.log(`Saving to ${resultFileName} file.`);
+    
+    fs.writeFileSync(resultFilePath, JSON.stringify(results));
+    console.log('Finished successfully!');
+  } catch (e) {
+    console.log(e);
   }
-  console.log('Parsing yaml files:');
-  const fileNames = fs.readdirSync(dirPath);
-  fileNames.forEach((fileName) => {
-    console.log(`  - ${fileName}`);
-    const filePath = path.resolve(dirPath, fileName);
-    const file = fs.readFileSync(filePath, 'utf8');
-    const document = yaml.safeLoad(file);
-    results.push(document);
-  });
-  console.log('Saving to comparisons.json file.');
-  
-  fs.writeFileSync(resultFilePath, JSON.stringify(results));
-  console.log('Finished successfully!');
-} catch (e) {
-  console.log(e);
 }
