@@ -9,10 +9,11 @@ build
 # misc
 .DS_Store
 npm-debug.log
+lerna-debug.log
 
 *.map
 
-comparisons/comparisons.json
+comparisons.json
 
 id_rsa
 id_rsa.pub

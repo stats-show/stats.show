@@ -1,32 +1,13 @@
 {
-  "name": "star-ratio",
-  "version": "0.0.1",
+  "scripts": {
+    "postinstall": "lerna bootstrap",
+    "build": "lerna run build",
+    "deploy": "lerna run deploy"
+  },
   "devDependencies": {
     "gh-pages": "^0.12.0",
     "js-yaml": "^3.7.0",
-    "react-scripts": "^0.8.4"
-  },
-  "dependencies": {
-    "fetch": "^1.1.0",
-    "intl": "^1.2.4",
-    "material-colors": "^1.2.0",
-    "moment": "^2.17.1",
-    "octicons": "^4.3.0",
-    "parse-github-url": "^0.3.2",
-    "react": "^15.4.1",
-    "react-addons-shallow-compare": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "react-intl": "^2.1.4",
-    "react-router": "^3.0.0",
-    "react-tooltip": "^3.2.2",
-    "react-vis": "^0.7.1",
-    "reactable": "^0.14.1"
-  },
-  "scripts": {
-    "start": "npm run build:comparisons && react-scripts start",
-    "build": "react-scripts build",
-    "build:comparisons": "node tools/buildComparisons.js",
-    "deploy": "gh-pages -d build -r git@github.com:StarRatio/star-ratio.git"
+    "lerna": "2.0.0-beta.31"
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
