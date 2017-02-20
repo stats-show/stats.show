@@ -60,7 +60,7 @@ const colorNames = [
   ];
 
 // const apiUrl = 'http://localhost:3001/api/';
-const apiUrl = 'http://u01.westeurope.cloudapp.azure.com/api';
+const apiUrl = 'http://u02.westeurope.cloudapp.azure.com/api';
 
 const keysSeparator = ",";
 export {
