@@ -1,12 +1,16 @@
-import React, { PropTypes, Component } from 'react';
-import { Table, Thead, Th, Tr, Td, Tfoot } from 'reactable';
-import { FormattedNumber } from 'react-intl';
-import ReactTooltip from 'react-tooltip';
-import Button from '../../Button';
-import { bindClass, durationToString, dateDiffFromNowToString } from '../../../utils';
-import { fieldTooltips } from '../../../constants';
+import React, { PropTypes, Component } from "react";
+import { Table, Thead, Th, Tr, Td, Tfoot } from "reactable";
+import { FormattedNumber } from "react-intl";
+import ReactTooltip from "react-tooltip";
+import Button from "../../Button";
+import {
+  bindClass,
+  durationToString,
+  dateDiffFromNowToString
+} from "../../../utils";
+import fieldTooltips from "../../../constants/fieldTooltips";
 
-import './index.css';
+import "./index.css";
 
 class TableView extends Component {
   constructor(props) {
@@ -16,20 +20,22 @@ class TableView extends Component {
 
   render() {
     const { keys, data, handleRemove } = this.props;
-    const dataItems = keys.map((item) => {return { key: item, item: data[item]};});
+    const dataItems = keys.map(item => {
+      return { key: item, item: data[item] };
+    });
     const sortableColumns = [
-      'name',
-      'downloads',
-      'stars',
-      'openedIssues',
-      'closedIssues',
-      'openedPullRequests',
-      'mergedPullRequests',
-      'commitsCount',
-      'contributors',
-      'issueTtl',
-      'pullRequestTtl',
-      'lastCommit'
+      "name",
+      "downloads",
+      "stars",
+      "openedIssues",
+      "closedIssues",
+      "openedPullRequests",
+      "mergedPullRequests",
+      "commitsCount",
+      "contributors",
+      "issueTtl",
+      "pullRequestTtl",
+      "lastCommit"
     ];
     return (
       <div className="TableView">
@@ -39,59 +45,90 @@ class TableView extends Component {
               <strong className="name-header">name</strong>
             </Th>
             <Th column="downloads">
-              <span className="octicon octicon-cloud-download" data-tip={fieldTooltips['downloads']}></span>
+              <span
+                className="octicon octicon-cloud-download"
+                data-tip={fieldTooltips["downloads"]}
+              />
             </Th>
             <Th column="stars">
-              <span className="octicon octicon-star" data-tip={fieldTooltips['stars']}></span>
+              <span
+                className="octicon octicon-star"
+                data-tip={fieldTooltips["stars"]}
+              />
             </Th>
             <Th column="openedIssues">
-              <span className="octicon octicon-issue-opened" data-tip={fieldTooltips['openedIssues']}></span>
+              <span
+                className="octicon octicon-issue-opened"
+                data-tip={fieldTooltips["openedIssues"]}
+              />
             </Th>
             <Th column="closedIssues">
-              <span className="octicon octicon-issue-closed" data-tip={fieldTooltips['closedIssues']}></span>
+              <span
+                className="octicon octicon-issue-closed"
+                data-tip={fieldTooltips["closedIssues"]}
+              />
             </Th>
             <Th column="openedPullRequests">
-              <span className="octicon octicon-git-branch" data-tip={fieldTooltips['openedPullRequests']}></span>
+              <span
+                className="octicon octicon-git-branch"
+                data-tip={fieldTooltips["openedPullRequests"]}
+              />
             </Th>
             <Th column="mergedPullRequests">
-              <span className="octicon octicon-git-pull-request" data-tip={fieldTooltips['mergedPullRequests']}></span>
+              <span
+                className="octicon octicon-git-pull-request"
+                data-tip={fieldTooltips["mergedPullRequests"]}
+              />
             </Th>
             <Th column="commitsCount">
-              <span className="octicon octicon-git-commit" data-tip={fieldTooltips['commitsCount']}></span>
+              <span
+                className="octicon octicon-git-commit"
+                data-tip={fieldTooltips["commitsCount"]}
+              />
             </Th>
             <Th column="contributors">
-              <span className="octicon octicon-organization" data-tip={fieldTooltips['contributors']}></span>
+              <span
+                className="octicon octicon-organization"
+                data-tip={fieldTooltips["contributors"]}
+              />
             </Th>
             <Th column="issueTtl">
-              <span data-tip={fieldTooltips['issueTtl']}>
-                <span className="octicon octicon-issue-opened"></span>
-                <span className="octicon octicon-arrow-right"></span>
-                <span className="octicon octicon-issue-closed"></span>
+              <span data-tip={fieldTooltips["issueTtl"]}>
+                <span className="octicon octicon-issue-opened" />
+                <span className="octicon octicon-arrow-right" />
+                <span className="octicon octicon-issue-closed" />
               </span>
             </Th>
             <Th column="pullRequestTtl">
-              <span data-tip={fieldTooltips['issueTtl']}>
-                <span className="octicon octicon-git-branch"></span>
-                <span className="octicon octicon-arrow-right"></span>
-                <span className="octicon octicon-git-pull-request"></span>
+              <span data-tip={fieldTooltips["issueTtl"]}>
+                <span className="octicon octicon-git-branch" />
+                <span className="octicon octicon-arrow-right" />
+                <span className="octicon octicon-git-pull-request" />
               </span>
             </Th>
             <Th column="lastCommit">
-              <span data-tip={fieldTooltips['lastCommit']}>
-                Last <span className="octicon octicon-git-commit"></span>
+              <span data-tip={fieldTooltips["lastCommit"]}>
+                Last <span className="octicon octicon-git-commit" />
               </span>
             </Th>
-            <Th column="actions"><span></span></Th>
+            <Th column="actions"><span /></Th>
           </Thead>
-          { dataItems.map((({key, item}) => 
+          {dataItems.map(({ key, item }) => (
             <Tr key={`${item.user}/${item.repo}`}>
               <Td column="name" vale={`${item.user}/${item.repo}`}>
-                <a className="TableView-name-link" href={`https://github.com/${item.user}/${item.repo}`} target="_blank" rel="nofollow">
+                <a
+                  className="TableView-name-link"
+                  href={`https://github.com/${item.user}/${item.repo}`}
+                  target="_blank"
+                  rel="nofollow"
+                >
                   {`${item.user}/${item.repo}`}
                 </a>
               </Td>
               <Td column="downloads" value={item.downloads || 0}>
-                { item.downloads ? <FormattedNumber value={item.downloads}/> : <span>-</span> } 
+                {item.downloads
+                  ? <FormattedNumber value={item.downloads} />
+                  : <span>-</span>}
               </Td>
               <Td column="stars" value={item.stars}>
                 <FormattedNumber value={item.stars} />
@@ -117,24 +154,29 @@ class TableView extends Component {
               <Td column="issueTtl" value={item.issueTtl}>
                 <span>{durationToString(item.issueTtl)}</span>
               </Td>
-              <Td column="pullRequestTtl" value={item.pullRequestTtl.toString()}>
+              <Td
+                column="pullRequestTtl"
+                value={item.pullRequestTtl.toString()}
+              >
                 <span>{durationToString(item.pullRequestTtl)}</span>
               </Td>
               <Td column="lastCommit" value={item.lastCommit}>
                 <span>{dateDiffFromNowToString(item.lastCommit)}</span>
               </Td>
               <Td column="actions">
-                <Button className="TableView-item-remove"
+                <Button
+                  className="TableView-item-remove"
                   handleClick={handleRemove}
-                  payload={key}>
-                X
+                  payload={key}
+                >
+                  X
                 </Button>
               </Td>
             </Tr>
           ))}
           <Tfoot className="reactable-tfoot">
             <tr>
-              <td></td>
+              <td />
             </tr>
           </Tfoot>
         </Table>
