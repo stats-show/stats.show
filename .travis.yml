@@ -8,10 +8,13 @@ branches:
   only:
    - master
 before_deploy:
-  - openssl aes-256-cbc -K $encrypted_26a036ce9b88_key -iv $encrypted_26a036ce9b88_iv -in id_rsa.enc -out id_rsa -d
-  - chmod 600 id_rsa
+  - openssl aes-256-cbc -K $encrypted_e906027832f2_key -iv $encrypted_e906027832f2_iv -in id_rsa_js.enc -out id_rsa_js -d
+  - openssl aes-256-cbc -K $encrypted_e906027832f2_key -iv $encrypted_e906027832f2_iv -in id_rsa_net.enc -out id_rsa_net -d
+  - chmod 600 id_rsa_js
+  - chmod 600 id_rsa_net
   - eval `ssh-agent -s`
-  - ssh-add id_rsa
+  - ssh-add id_rsa_js
+  - ssh-add id_rsa_net
   - git config --global user.name $USER_NAME
   - git config --global user.email $USER_EMAIL
 deploy:
