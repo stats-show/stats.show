@@ -1,0 +1,64 @@
+.CompareRatio {
+    margin-top: 5vh;
+    min-height: 80vh;
+}
+
+.CompareRatio-form {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.CompareRatio-input,
+.CompareRatio-input-long {
+    box-sizing: border-box;
+    margin: 10px 20px;
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    outline: none;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.CompareRatio-input {
+    width: 200px;
+}
+
+.CompareRatio-input-long {
+    width: 400px;
+}
+
+.CompareRatio-hint {
+    font-size: 11px;
+}
+
+.CompareRatio-button {
+    padding: 10px 36px;
+    border: 1px solid #68217A;
+    outline: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 18px;
+    background-color: #fff;
+    color: #68217A;
+}
+
+.CompareRatio-button:hover {
+    background-color: #68217A;
+    color: #fff;
+}
+
+.CompareRatio-message-container {
+    min-height: 70px;
+    text-align: center;
+}
+
+.CompareRatio-message {
+    font-size: 18px;
+    line-height: 70px;
+}
+
+@media (max-width: 860px) {
+    .CompareRatio-input-long {
+        width: 300px;
+    }
+}

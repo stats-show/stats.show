@@ -1,4 +1,4 @@
-title: Logging
+title: Logging Libraries
 repos:
   - github: NLog/NLog
   - github: apache/log4net
