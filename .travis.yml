@@ -8,8 +8,8 @@ branches:
   only:
    - master
 before_deploy:
-  - openssl aes-256-cbc -K $encrypted_39cff786ff93_key -iv $encrypted_39cff786ff93_iv -in id_rsa_js.enc -out id_rsa_js -d
-  - openssl aes-256-cbc -K $encrypted_39cff786ff93_key -iv $encrypted_39cff786ff93_iv -in id_rsa_net.enc -out id_rsa_net -d
+  - openssl aes-256-cbc -K $encrypted_39cff786ff93_key -iv $encrypted_39cff786ff93_iv -in secrets.tar.enc -out secrets.tar -d
+  - tar xvf secrets.tar
   - chmod 600 id_rsa_js
   - chmod 600 id_rsa_net
   - eval `ssh-agent -s`
