@@ -24,7 +24,8 @@
 		"reactable": "^0.14.1"
 	},
 	"devDependencies": {
-		"react-scripts": "^0.8.4"
+		"react-scripts": "^0.8.4",
+		"gh-pages": "^0.12.0"
 	},
 	"eslintConfig": {
 		"extends": "./node_modules/react-scripts/config/eslint.js"

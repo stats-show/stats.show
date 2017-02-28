@@ -1,15 +1,14 @@
 {
-  "scripts": {
-    "postinstall": "lerna bootstrap",
-    "build": "lerna run build",
-    "deploy": "lerna run deploy"
-  },
-  "devDependencies": {
-    "gh-pages": "^0.12.0",
-    "js-yaml": "^3.7.0",
-    "lerna": "2.0.0-beta.31"
-  },
-  "eslintConfig": {
-    "extends": "./node_modules/react-scripts/config/eslint.js"
-  }
+	"scripts": {
+		"postinstall": "lerna bootstrap",
+		"build": "lerna run build",
+		"deploy": "lerna run deploy"
+	},
+	"devDependencies": {
+		"js-yaml": "^3.7.0",
+		"lerna": "2.0.0-beta.31"
+	},
+	"eslintConfig": {
+		"extends": "./node_modules/react-scripts/config/eslint.js"
+	}
 }
