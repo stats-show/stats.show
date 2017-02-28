@@ -1,0 +1,9 @@
+title: Object Relational Mappers
+repos:
+  - github: StackExchange/Dapper
+  - github: aspnet/EntityFramework6
+    nuget: EntityFramework
+  - github: aspnet/EntityFramework
+    nuget: Microsoft.EntityFrameworkCore
+  - github: nhibernate/nhibernate-core
+    nuget: NHibernate

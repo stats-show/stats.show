@@ -1,0 +1,6 @@
+title: Inversion of Control Containers
+repos:
+  - github: ninject/Ninject
+  - github: autofac/Autofac
+  - github: castleproject/Windsor
+    nuget: Castle.Windsor

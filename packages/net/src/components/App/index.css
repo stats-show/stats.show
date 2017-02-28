@@ -1,0 +1,42 @@
+.App-container {
+  margin-bottom: 20px;
+  min-width: 768px;
+}
+
+.App-nav {
+  text-align: center;
+}
+
+.App-nav-link {
+  display: inline-block;;
+  padding: 10px 36px;
+  border: 1px solid #fff;
+  outline: none;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 18px;  
+  background-color: #fff;
+  color:#00BCD4;
+}
+
+.App-nav-link:hover {
+  background-color: #00BCD4;
+  border-bottom: 1px solid #00BCD4;
+  color: #fff;
+}
+
+.App-nav-link__active {
+  border-bottom: 1px solid #00BCD4;
+}
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto 20px;
+  min-width: 768px;
+  max-width: 1200px;
+}

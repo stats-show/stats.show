@@ -1,0 +1,26 @@
+.ViewSwitcher {
+    margin: 15px;
+    text-align: center;
+}
+
+.ViewSwitcher-items {
+    display: inline-block;
+    border: 1px solid #68217A;
+}
+
+.ViewSwitcher-link {
+    display: inline-block;
+    padding: 5px 16px;
+    outline: none;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 18px;
+    background-color: #fff;
+    color: #68217A;
+}
+
+.ViewSwitcher-link__active {
+    background-color: #68217A;
+    color: #fff;
+}
