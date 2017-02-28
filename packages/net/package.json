@@ -1,5 +1,5 @@
 {
-	"name": "js",
+	"name": "net",
 	"scripts": {
 		"start": "npm run build:comparisons && react-scripts start",
 		"build": "npm run build:comparisons && npm run build:app",
