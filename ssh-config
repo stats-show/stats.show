@@ -1,11 +1,11 @@
 Host stats-show-js
   HostName github.com
   User git
-  IdentityFile /home/whoever/.ssh/id_dsa_js
+  IdentityFile ~/.ssh/id_dsa_js
   IdentitiesOnly yes
 
 Host stats-show-net
   HostName github.com
   User git
-  IdentityFile /home/whoever/.ssh/id_rsa_net
+  IdentityFile ~/.ssh/id_rsa_net
   IdentitiesOnly yes
