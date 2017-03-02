@@ -1,7 +1,7 @@
 Host stats-show-js
   HostName github.com
   User git
-  IdentityFile ~/.ssh/id_dsa_js
+  IdentityFile ~/.ssh/id_rsa_js
   IdentitiesOnly yes
 
 Host stats-show-net

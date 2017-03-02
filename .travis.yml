@@ -15,6 +15,7 @@ before_deploy:
   - eval `ssh-agent -s`
   - ssh-add id_rsa_js
   - ssh-add id_rsa_net
+  - ls ~/.ssh/
   - git config --global user.name $USER_NAME
   - git config --global user.email $USER_EMAIL
   - cp ssh-config ~/.ssh/config
