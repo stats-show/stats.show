@@ -17,6 +17,7 @@ before_deploy:
   - ssh-add id_rsa_net
   - git config --global user.name $USER_NAME
   - git config --global user.email $USER_EMAIL
+  - cp config ~/.ssh/config
 deploy:
   provider: script
   script: npm run deploy

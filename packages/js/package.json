@@ -5,7 +5,7 @@
 		"build": "npm run build:comparisons && npm run build:app",
 		"build:app": "react-scripts build",
 		"build:comparisons": "node ../../tools/buildComparisons.js ../js/comparisons",
-		"deploy": "gh-pages -d build -r git@github.com:stats-show/js.git -b master"
+		"deploy": "gh-pages -d build -r git@stats-show-js:stats-show/js.git -b master"
 	},
 	"dependencies": {
 		"fetch": "^1.1.0",
