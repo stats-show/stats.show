@@ -1,26 +1,26 @@
 .ViewSwitcher {
-  margin: 15px;
-  text-align: center;
+    margin: 15px;
+    text-align: center;
 }
 
 .ViewSwitcher-items {
-  display: inline-block;
-  border: 1px solid #00BCD4;
+    display: inline-block;
+    border: 1px solid #00BCD4;
 }
 
 .ViewSwitcher-link {
-  display: inline-block;
-  padding: 5px 16px;
-  outline: none;
-  text-decoration: none;
-  font-size: 12px;
-  text-transform: uppercase;
-  line-height: 18px;  
-  background-color: #fff;
-  color:#00BCD4;
+    display: inline-block;
+    padding: 5px 16px;
+    outline: none;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 18px;
+    background-color: #fff;
+    color: #00BCD4;
 }
 
 .ViewSwitcher-link__active {
-  background-color: #00BCD4;
-  color: #fff;
+    background-color: #00BCD4;
+    color: #fff;
 }
