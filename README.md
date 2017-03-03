@@ -22,20 +22,20 @@ Handy tool to compare open source projects:
 To add the link with comparisons to the list just add a new yaml file into `comparisons` folder:
 
 ### JavaScript
-[Create file](https://github.com/stats-show/stats.show/new/master/packages/js/comparisons) with format:  
+[Create yaml file](https://github.com/stats-show/stats.show/new/master/packages/js/comparisons) with following format:  
 ```
 title: <Title for the link>
 repos:
-  - github: <github user/ github repository> 
+  - github: <github user / github repository> 
     npm: <npm package name> (optional, needed only if package name different that repository name)
 ```
 
 ### .NET
-[Create file](https://github.com/stats-show/stats.show/new/master/packages/net/comparisons) with format:  
+[Create yaml file](https://github.com/stats-show/stats.show/new/master/packages/net/comparisons) with following format:  
 ```
 title: <Title for the link>
 repos:
-  - github: <github user/ github repository> 
+  - github: <github user / github repository> 
     nuget: <nuget package name> (optional, needed only if package name different that repository name)
 ```
 
