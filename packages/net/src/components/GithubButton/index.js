@@ -11,10 +11,10 @@ class GithubButton extends Component {
           href="https://github.com/stats-show/stats.show"
           data-icon="octicon-star"
           data-style="mega"
-          data-count-href="/StarRatio/star-ratio/stargazers"
-          data-count-api="/repos/StarRatio/star-ratio#stargazers_count"
+          data-count-href="/stats-show/stats.show/stargazers"
+          data-count-api="/repos/stats-show/stats.show#stargazers_count"
           data-count-aria-label="# stargazers on GitHub"
-          aria-label="Star StarRatio/star-ratio on GitHub"
+          aria-label="Star stats-show/stats.show on GitHub"
         >
           Star
         </a>
