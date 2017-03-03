@@ -10,15 +10,11 @@ branches:
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_39cff786ff93_key -iv $encrypted_39cff786ff93_iv -in secrets.tar.enc -out secrets.tar -d
   - tar xvf secrets.tar
-  - chmod 600 id_rsa_js
-  - chmod 600 id_rsa_net
-  - eval `ssh-agent -s`
-  - ssh-add id_rsa_js
-  - ssh-add id_rsa_net
-  - ls ~/.ssh/
+  - cp id_rsa_js ~/.ssh/id_rsa_js
+  - cp id_rsa_net ~/.ssh/id_rsa_net
+  - cp ssh-config ~/.ssh/config
   - git config --global user.name $USER_NAME
   - git config --global user.email $USER_EMAIL
-  - cp ssh-config ~/.ssh/config
 deploy:
   provider: script
   script: npm run deploy
