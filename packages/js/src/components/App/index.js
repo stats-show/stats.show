@@ -12,7 +12,7 @@ class App extends Component {
       <IntlProvider locale="en">
         <div className="App-container">
           <div className="App-nav">
-            <IndexLink className="App-nav-link" activeClassName="App-nav-link__active" to="">Home</IndexLink>
+            <IndexLink className="App-nav-link" activeClassName="App-nav-link__active" to="/">Home</IndexLink>
             <Link className="App-nav-link" activeClassName="App-nav-link__active" to="/compare">Compare</Link>
             <Link className="App-nav-link" activeClassName="App-nav-link__active" to="/chart">Explore</Link>
             <TwitterButton />
